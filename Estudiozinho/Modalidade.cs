@@ -75,22 +75,23 @@ namespace Estudiozinho
 
             return resultado;
         }
+
         public MySqlDataReader consultaTodasModalidade()
         {
             MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade", DAO_Conexão.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where ativa = 0", DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-
             return resultado;
         }
+        
 
         public bool atualizarModalidade()
         {

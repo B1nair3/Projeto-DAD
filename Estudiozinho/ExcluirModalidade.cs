@@ -16,34 +16,46 @@ namespace Estudiozinho
         public ExcluirModalidade()
         {
             InitializeComponent();
-            Modalidade cad = new Modalidade();
-            MySqlDataReader r = cad.consultaTodasModalidade();
-            try
-            {
-                while (r.Read())
-                    comboBox1.Items.Add(r["descricaoModalidade"].ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha!");
-            }
 
-
-            DAO_Conexão.con.Close();
+            atualizaComboBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Modalidade modalidade = new Modalidade(comboBox1.Text);
+            try
+            {
+                Modalidade modalidade = new Modalidade(comboBox1.SelectedItem.ToString());
                 if (modalidade.excluirModalidade())
                 {
-                    MySqlDataReader r = modalidade.consultaModalidade();
-                    MessageBox.Show("Modalidade excluída!");
+                    MessageBox.Show("Modalidade excluída com sucesso!");
                 }
-                else
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            atualizaComboBox();
+        }
+        public void atualizaComboBox()
+        {
+            Modalidade modalidade = new Modalidade();
+            try
+            {
+                MySqlDataReader r = modalidade.consultaTodasModalidade();
+                if (r.HasRows)
                 {
-                    MessageBox.Show("Modalidade não encontrada!");
+                    while (r.Read())
+                    {
+                        comboBox1.Items.Add(r["descricaoModalidade"].ToString());
+                    }
                 }
+                r.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            DAO_Conexão.con.Close();
         }
     }
 }
