@@ -28,6 +28,7 @@ namespace Estudiozinho
                 if (modalidade.excluirModalidade())
                 {
                     MessageBox.Show("Modalidade excluída com sucesso!");
+                    comboBox1.SelectedIndex = -1;
                 }
             }
             catch (Exception ex)
@@ -44,6 +45,7 @@ namespace Estudiozinho
                 MySqlDataReader r = modalidade.consultaTodasModalidade();
                 if (r.HasRows)
                 {
+                    comboBox1.Items.Clear();
                     while (r.Read())
                     {
                         comboBox1.Items.Add(r["descricaoModalidade"].ToString());
@@ -55,7 +57,10 @@ namespace Estudiozinho
             {
                 Console.WriteLine(e.ToString());
             }
-            DAO_Conexão.con.Close();
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
         }
     }
 }

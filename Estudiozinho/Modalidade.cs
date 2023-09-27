@@ -89,18 +89,19 @@ namespace Estudiozinho
             {
                 Console.WriteLine(ex.ToString());
             }
+
             return resultado;
         }
         
 
-        public bool atualizarModalidade()
+        public bool atualizarModalidade(int id)
         {
             bool cad = false;
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set qntAluno = " + qntAlunos + "set qntAula = " + qntAulas +
-                    "set precoModalidade = " + preco + "set descricaoModalidade = " + descricao, DAO_Conexão.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set qntAlunos = " + qntAlunos + ", qntAulas = " + qntAulas +
+                    ", precoModalidade = " + preco + ", descricaoModalidade = '" + descricao + "' where idEstudio_Modalidade = " + id, DAO_Conexão.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
