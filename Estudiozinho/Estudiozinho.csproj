@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aluno.cs" />
+    <Compile Include="CadastrarTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarTurma.Designer.cs">
+      <DependentUpon>CadastrarTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO_Conexão.cs" />
     <Compile Include="Excluir.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,10 @@
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Turma.cs" />
+    <EmbeddedResource Include="CadastrarTurma.resx">
+      <DependentUpon>CadastrarTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Excluir.resx">
       <DependentUpon>Excluir.cs</DependentUpon>
     </EmbeddedResource>

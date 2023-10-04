@@ -92,5 +92,12 @@ namespace Estudiozinho
             excluir.MdiParent = this;
             excluir.Show();
         }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarTurma cadTurma = new CadastrarTurma();
+            cadTurma.MdiParent = this;
+            cadTurma.Show();
+        }
     }
 }
