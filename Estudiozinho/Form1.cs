@@ -106,5 +106,29 @@ namespace Estudiozinho
             exTurma.MdiParent = this;
             exTurma.Show();
         }
+
+        private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void sairToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cadastrarModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form5 cadModalidade = new Form5();
+            cadModalidade.MdiParent = this;
+            cadModalidade.Show();
+        }
+
+        private void excluirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ExcluirModalidade exModalidade = new ExcluirModalidade();
+            exModalidade.MdiParent = this;
+            exModalidade.Show();
+        }
     }
 }
