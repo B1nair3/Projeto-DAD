@@ -38,6 +38,7 @@ namespace Estudiozinho
             if (turma.cadastrarTurma())
             {
                 MessageBox.Show("Turma cadastrada com sucesso!");
+                limpar();
             }
             else
             {
@@ -45,12 +46,19 @@ namespace Estudiozinho
             }
         }
 
-        /*
-        private void dgwTurma_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgwTurma_SelectionChanged(object sender, EventArgs e)
         {
-            int index = e.RowIndex;
-            dgwTurma.SelectedRows;
+            String modalidadeEscolhida = dgwTurma.SelectedRows[0].Cells[0].Value.ToString();
+            txtModalidade.Text = modalidadeEscolhida;
         }
-        */
+
+        public void limpar()
+        {
+            txtDia.Text = "";
+            txtMaximoAluno.Text = "";
+            txtModalidade.Text = "";
+            txtProfessor.Text = "";
+            mkdHora.Text = "";
+        }
     }
 }

@@ -79,3 +79,4 @@ C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.csproj.Co
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.exe
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.pdb
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.CadastrarTurma.resources
+C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ExcluirTurma.resources

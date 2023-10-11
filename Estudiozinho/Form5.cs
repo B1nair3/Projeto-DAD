@@ -45,6 +45,7 @@ namespace Estudiozinho
                 DAO_Conexão.con.Close();
             }
         }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             float preco = float.Parse(txtPreco.Text);

@@ -164,10 +164,13 @@ namespace Estudiozinho
             this.dgwTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.modalidade});
             this.dgwTurma.Location = new System.Drawing.Point(423, 20);
+            this.dgwTurma.MultiSelect = false;
             this.dgwTurma.Name = "dgwTurma";
+            this.dgwTurma.ReadOnly = true;
+            this.dgwTurma.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwTurma.Size = new System.Drawing.Size(144, 159);
             this.dgwTurma.TabIndex = 9;
-            this.dgwTurma.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwTurma_CellDoubleClick);
+            this.dgwTurma.SelectionChanged += new System.EventHandler(this.dgwTurma_SelectionChanged);
             // 
             // modalidade
             // 
