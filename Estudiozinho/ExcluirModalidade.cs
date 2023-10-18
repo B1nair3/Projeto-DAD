@@ -34,8 +34,8 @@ namespace Estudiozinho
                     MySqlDataReader r = modalidade.consultaModalidade();
                     r.Read();
                     int idModalidade = int.Parse(r["idEstudio_Modalidade"].ToString());
+                    DAO_Conexão.con.Close();
                     Turma turma = new Turma();
-
                     if (turma.excluirTurmaModalidade(idModalidade))
                     {
                         MessageBox.Show("Todas as turmas ligadas a essa modalidade foram desativadas!");
@@ -56,7 +56,6 @@ namespace Estudiozinho
             }
             finally
             {
-                DAO_Conexão.con.Close();
                 atualizaComboBox();
             }
         }
