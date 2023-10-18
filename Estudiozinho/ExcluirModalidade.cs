@@ -25,17 +25,40 @@ namespace Estudiozinho
             try
             {
                 Modalidade modalidade = new Modalidade(comboBox1.SelectedItem.ToString());
+
                 if (modalidade.excluirModalidade())
                 {
                     MessageBox.Show("Modalidade excluída com sucesso!");
                     comboBox1.SelectedIndex = -1;
+
+                    MySqlDataReader r = modalidade.consultaModalidade();
+                    r.Read();
+                    int idModalidade = int.Parse(r["idEstudio_Modalidade"].ToString());
+                    Turma turma = new Turma();
+
+                    if (turma.excluirTurmaModalidade(idModalidade))
+                    {
+                        MessageBox.Show("Todas as turmas ligadas a essa modalidade foram desativadas!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao desativar turmas ligadas a essa modalidade!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao excluir modalidade!");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            atualizaComboBox();
+            finally
+            {
+                DAO_Conexão.con.Close();
+                atualizaComboBox();
+            }
         }
         public void atualizaComboBox()
         {

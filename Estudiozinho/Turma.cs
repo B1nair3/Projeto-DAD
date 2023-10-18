@@ -86,6 +86,29 @@ namespace Estudiozinho
             return existe;
         }
 
+        public bool excluirTurmaModalidade(int idModalidade)
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Turma set ativa = 1 where idModalidade = " +
+                    idModalidade, DAO_Conexão.con);
+                exclui.ExecuteNonQuery();
+                existe = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
+
+            return existe;
+        }
+
         public MySqlDataReader consultaTodasTurmas()
         {
             MySqlDataReader resultado = null;

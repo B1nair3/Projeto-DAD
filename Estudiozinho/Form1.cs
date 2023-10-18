@@ -51,7 +51,6 @@ namespace Estudiozinho
             {
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
-                MessageBox.Show("Bem vindo adm supremo!");
             }
             //não adm
             if (tipo == 2)
@@ -61,7 +60,6 @@ namespace Estudiozinho
                 cadastrarLoginToolStripMenuItem.Enabled = false;
                 turmaToolStripMenuItem.Enabled = false;
                 modalidadeToolStripMenuItem1.Enabled = false;
-                MessageBox.Show("Bem vindo usuário!");
             }
         }
 

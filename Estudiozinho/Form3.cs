@@ -49,44 +49,51 @@ namespace Estudiozinho
                 }
                 else
                 {
-                    MessageBox.Show("Falha no cadastro!");
+                    MessageBox.Show("Falha no cadastro! CPF já cadastrado!");
                 }
             }
         }
         private void mkdCpf_KeyPress(object sender, KeyPressEventArgs e)
         {
             Aluno aluno = new Aluno(mkdCpf.Text);
-
             if (e.KeyChar == 13)
             {
-                if (aluno.consultarAluno()) {
-                    DialogResult result = MessageBox.Show("Aluno já cadastrado! Você deseja atualizar os dados?", "Aluno já existente",
-                        MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
+                if (aluno.verificaCPF())
+                {
+                    if (aluno.consultarAluno())
                     {
-                        MySqlDataReader r = aluno.consultarAluno01();
-                        r.Read();
-                        txtNome.Text = r["nomeAluno"].ToString();
-                        txtEndereco.Text = r["ruaAluno"].ToString();
-                        txtNumero.Text = r["numeroAluno"].ToString();
-                        txtBairro.Text = r["bairroAluno"].ToString();
-                        txtComplemento.Text = r["complementoAluno"].ToString();
-                        mkdCep.Text = r["cepAluno"].ToString();
-                        txtCidade.Text = r["cidadeAluno"].ToString();
-                        txtEstado.Text = r["estadoAluno"].ToString();
-                        mkdTelefone.Text = r["telefoneAluno"].ToString();
-                        txtEmail.Text = r["emailAluno"].ToString();
-                        mkdCpf.Enabled = false;
-                        resultado = result;
-                        btnLimpar.Enabled = false;
-                        btmCadastrar.Text = "Atualizar";
+                        DialogResult result = MessageBox.Show("Aluno já cadastrado! Você deseja atualizar os dados?", "Aluno já existente",
+                            MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            MySqlDataReader r = aluno.consultarAluno01();
+                            r.Read();
+                            txtNome.Text = r["nomeAluno"].ToString();
+                            txtEndereco.Text = r["ruaAluno"].ToString();
+                            txtNumero.Text = r["numeroAluno"].ToString();
+                            txtBairro.Text = r["bairroAluno"].ToString();
+                            txtComplemento.Text = r["complementoAluno"].ToString();
+                            mkdCep.Text = r["cepAluno"].ToString();
+                            txtCidade.Text = r["cidadeAluno"].ToString();
+                            txtEstado.Text = r["estadoAluno"].ToString();
+                            mkdTelefone.Text = r["telefoneAluno"].ToString();
+                            txtEmail.Text = r["emailAluno"].ToString();
+                            mkdCpf.Enabled = false;
+                            resultado = result;
+                            btnLimpar.Enabled = false;
+                            btmCadastrar.Text = "Atualizar";
+                        }
                     }
+                    else
+                    {
+                        txtNome.Focus();
+                    }
+                    DAO_Conexão.con.Close(); //somente fecha depois de retornar
                 }
                 else
                 {
-                    txtNome.Focus();
+                    MessageBox.Show("Numero de CPF inválido!");
                 }
-            DAO_Conexão.con.Close(); //somente fecha depois de retornar
             }
         }
 
