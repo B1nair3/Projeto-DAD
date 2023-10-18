@@ -59,8 +59,8 @@ namespace Estudiozinho
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
                 cadastrarLoginToolStripMenuItem.Enabled = false;
-                cadastrarAlunoToolStripMenuItem.Enabled = false;
-                excluirToolStripMenuItem.Enabled = false;
+                turmaToolStripMenuItem.Enabled = false;
+                modalidadeToolStripMenuItem1.Enabled = false;
                 MessageBox.Show("Bem vindo usuário!");
             }
         }
@@ -129,6 +129,13 @@ namespace Estudiozinho
             ExcluirModalidade exModalidade = new ExcluirModalidade();
             exModalidade.MdiParent = this;
             exModalidade.Show();
+        }
+
+        private void atualizarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AtualizarTurma attTurma = new AtualizarTurma();
+            attTurma.MdiParent = this;
+            attTurma.Show();
         }
     }
 }
