@@ -38,10 +38,10 @@ namespace Estudiozinho
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modalidadeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +53,8 @@ namespace Estudiozinho
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.classeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +64,8 @@ namespace Estudiozinho
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
             this.turmaToolStripMenuItem,
-            this.modalidadeToolStripMenuItem1});
+            this.modalidadeToolStripMenuItem1,
+            this.classeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(968, 24);
@@ -129,35 +132,35 @@ namespace Estudiozinho
             // cadastrarTurmaToolStripMenuItem
             // 
             this.cadastrarTurmaToolStripMenuItem.Name = "cadastrarTurmaToolStripMenuItem";
-            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.cadastrarTurmaToolStripMenuItem.Text = "Cadastrar Turma";
             this.cadastrarTurmaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarTurmaToolStripMenuItem_Click);
+            // 
+            // atualizarTurmaToolStripMenuItem
+            // 
+            this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
+            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
+            this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click);
             // 
             // excluirTurmaToolStripMenuItem
             // 
             this.excluirTurmaToolStripMenuItem.Name = "excluirTurmaToolStripMenuItem";
-            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
             this.excluirTurmaToolStripMenuItem.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
             // 
             // sairToolStripMenuItem1
             // 
             this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.sairToolStripMenuItem1.Text = "Sair";
             this.sairToolStripMenuItem1.Click += new System.EventHandler(this.sairToolStripMenuItem1_Click);
-            // 
-            // atualizarTurmaToolStripMenuItem
-            // 
-            this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
-            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
-            this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click);
             // 
             // modalidadeToolStripMenuItem1
             // 
@@ -255,11 +258,26 @@ namespace Estudiozinho
             this.label1.TabIndex = 0;
             this.label1.Text = "Login:";
             // 
+            // classeToolStripMenuItem
+            // 
+            this.classeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.matriculaToolStripMenuItem});
+            this.classeToolStripMenuItem.Name = "classeToolStripMenuItem";
+            this.classeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.classeToolStripMenuItem.Text = "Classe";
+            // 
+            // matriculaToolStripMenuItem
+            // 
+            this.matriculaToolStripMenuItem.Name = "matriculaToolStripMenuItem";
+            this.matriculaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.matriculaToolStripMenuItem.Text = "Matricula";
+            this.matriculaToolStripMenuItem.Click += new System.EventHandler(this.matriculaToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 472);
+            this.ClientSize = new System.Drawing.Size(968, 676);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -302,6 +320,8 @@ namespace Estudiozinho
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem atualizarTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem classeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matriculaToolStripMenuItem;
     }
 }
 

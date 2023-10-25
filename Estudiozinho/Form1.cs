@@ -135,5 +135,12 @@ namespace Estudiozinho
             attTurma.MdiParent = this;
             attTurma.Show();
         }
+
+        private void matriculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MatricularAluno mAluno = new MatricularAluno();
+            mAluno.MdiParent = this;
+            mAluno.Show();
+        }
     }
 }

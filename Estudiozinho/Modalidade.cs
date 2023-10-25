@@ -14,7 +14,7 @@ namespace Estudiozinho
     {
         private String descricao;
         private float preco;
-        private int qntAlunos, qntAulas;
+        private int qntAlunos, qntAulas, id;
 
         public string Descricao { get => descricao; set => descricao = value; }
         public float Preco { get => preco; set => preco = value; }
@@ -32,6 +32,11 @@ namespace Estudiozinho
         public Modalidade(string descricao)
         {
             this.descricao = descricao;
+        }
+
+        public Modalidade(int id)
+        {
+            this.id = id;
         }
 
         public Modalidade(){}
@@ -74,6 +79,46 @@ namespace Estudiozinho
             }
 
             return resultado;
+        }
+
+        public String consultaDescricao()
+        {
+            MySqlDataReader resultado = null;
+            String modalidade = "";
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + id, DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+                resultado.Read();
+                modalidade = resultado["descricaoModalidade"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return modalidade;
+        }
+
+        public String consultaMaximo()
+        {
+            MySqlDataReader resultado = null;
+            String modalidade = "";
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + id, DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+                resultado.Read();
+                modalidade = resultado["qntAlunos"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return modalidade;
         }
 
         public MySqlDataReader consultaTodasModalidade()

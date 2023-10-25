@@ -105,6 +105,12 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
+    <Compile Include="MatricularAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatricularAluno.Designer.cs">
+      <DependentUpon>MatricularAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatricularAluno.resx">
+      <DependentUpon>MatricularAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

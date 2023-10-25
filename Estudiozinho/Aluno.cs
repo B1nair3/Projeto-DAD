@@ -60,6 +60,7 @@ namespace Estudiozinho
             setTelefone(telefone);
             setEmail(email);
         }
+        public Aluno(){}
 
         public bool verificaCPF() //string CPF - sem parâmetro
         {
@@ -143,6 +144,23 @@ namespace Estudiozinho
             }
 
             return existe;
+        }
+
+        public MySqlDataReader consultarTodosAlunos()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
         }
 
         public bool atualizarAluno()
