@@ -170,7 +170,24 @@ namespace Estudiozinho
 
             return resultado;
         }
-        
+
+        public MySqlDataReader consultaTodasModalidadeDesativas()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where ativa = 1", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
+
         public bool atualizarModalidade(int id)
         {
             bool cad = false;
@@ -179,6 +196,28 @@ namespace Estudiozinho
                 DAO_Conexão.con.Open();
                 MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set qntAlunos = " + qntAlunos + ", qntAulas = " + qntAulas +
                     ", precoModalidade = '" + preco + "', descricaoModalidade = '" + descricao + "' where idEstudio_Modalidade = " + id, DAO_Conexão.con);
+                atualiza.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
+            return cad;
+        }
+
+        public bool reativarModalidade()
+        {
+            bool cad = false;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set ativa = 0 where descricaoModalidade = '"
+                    + descricao + "'", DAO_Conexão.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }

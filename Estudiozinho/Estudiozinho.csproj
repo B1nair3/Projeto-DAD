@@ -138,6 +138,12 @@
     <Compile Include="ReativarAluno.Designer.cs">
       <DependentUpon>ReativarAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReativarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReativarModalidade.Designer.cs">
+      <DependentUpon>ReativarModalidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Turma.cs" />
     <EmbeddedResource Include="AtualizarTurma.resx">
       <DependentUpon>AtualizarTurma.cs</DependentUpon>
@@ -189,6 +195,9 @@
     </Compile>
     <EmbeddedResource Include="ReativarAluno.resx">
       <DependentUpon>ReativarAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReativarModalidade.resx">
+      <DependentUpon>ReativarModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

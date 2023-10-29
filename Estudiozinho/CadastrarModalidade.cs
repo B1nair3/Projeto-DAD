@@ -20,6 +20,7 @@ namespace Estudiozinho
             InitializeComponent();
             atualizaComboBox();
         }
+
         public void atualizaComboBox()
         {
             Modalidade modalidade = new Modalidade();

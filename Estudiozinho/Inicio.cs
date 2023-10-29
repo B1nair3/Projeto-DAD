@@ -173,5 +173,12 @@ namespace Estudiozinho
             reativar.MdiParent = this;
             reativar.Show();
         }
+
+        private void reativarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReativarModalidade reativarModal = new ReativarModalidade();
+            reativarModal.MdiParent = this;
+            reativarModal.Show();
+        }
     }
 }

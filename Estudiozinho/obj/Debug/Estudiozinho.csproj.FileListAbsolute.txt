@@ -112,3 +112,4 @@ C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.C
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ConsultarTurma.resources
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ConsultarAluno.resources
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ReativarAluno.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ReativarModalidade.resources

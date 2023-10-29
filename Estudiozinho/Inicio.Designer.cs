@@ -59,6 +59,7 @@ namespace Estudiozinho
             this.consultarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reativarAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reativarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -173,6 +174,7 @@ namespace Estudiozinho
             // 
             this.modalidadeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarModalidadeToolStripMenuItem,
+            this.reativarModalidadeToolStripMenuItem,
             this.consultarModalidadeToolStripMenuItem,
             this.excluirToolStripMenuItem1,
             this.toolStripSeparator2,
@@ -309,6 +311,13 @@ namespace Estudiozinho
             this.reativarAlunoToolStripMenuItem.Text = "Reativar Aluno";
             this.reativarAlunoToolStripMenuItem.Click += new System.EventHandler(this.reativarAlunoToolStripMenuItem_Click);
             // 
+            // reativarModalidadeToolStripMenuItem
+            // 
+            this.reativarModalidadeToolStripMenuItem.Name = "reativarModalidadeToolStripMenuItem";
+            this.reativarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.reativarModalidadeToolStripMenuItem.Text = "Reativar Modalidade";
+            this.reativarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.reativarModalidadeToolStripMenuItem_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +371,7 @@ namespace Estudiozinho
         private System.Windows.Forms.ToolStripMenuItem consultarTurmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarAlunoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reativarAlunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reativarModalidadeToolStripMenuItem;
     }
 }
 

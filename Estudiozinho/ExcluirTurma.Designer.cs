@@ -34,16 +34,16 @@ namespace Estudiozinho
             this.txtId = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.txtAlunos = new System.Windows.Forms.TextBox();
+            this.txtProfessor = new System.Windows.Forms.TextBox();
+            this.txtModalidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtModalidade = new System.Windows.Forms.TextBox();
-            this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.txtAlunos = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.txtDia = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +107,46 @@ namespace Estudiozinho
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Turma";
             // 
+            // txtDia
+            // 
+            this.txtDia.Enabled = false;
+            this.txtDia.Location = new System.Drawing.Point(103, 88);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(167, 20);
+            this.txtDia.TabIndex = 9;
+            // 
+            // txtHora
+            // 
+            this.txtHora.Enabled = false;
+            this.txtHora.Location = new System.Drawing.Point(103, 114);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(167, 20);
+            this.txtHora.TabIndex = 8;
+            // 
+            // txtAlunos
+            // 
+            this.txtAlunos.Enabled = false;
+            this.txtAlunos.Location = new System.Drawing.Point(103, 140);
+            this.txtAlunos.Name = "txtAlunos";
+            this.txtAlunos.Size = new System.Drawing.Size(167, 20);
+            this.txtAlunos.TabIndex = 7;
+            // 
+            // txtProfessor
+            // 
+            this.txtProfessor.Enabled = false;
+            this.txtProfessor.Location = new System.Drawing.Point(103, 62);
+            this.txtProfessor.Name = "txtProfessor";
+            this.txtProfessor.Size = new System.Drawing.Size(167, 20);
+            this.txtProfessor.TabIndex = 6;
+            // 
+            // txtModalidade
+            // 
+            this.txtModalidade.Enabled = false;
+            this.txtModalidade.Location = new System.Drawing.Point(103, 33);
+            this.txtModalidade.Name = "txtModalidade";
+            this.txtModalidade.Size = new System.Drawing.Size(167, 20);
+            this.txtModalidade.TabIndex = 5;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -151,41 +191,6 @@ namespace Estudiozinho
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID Modalidade:";
-            // 
-            // txtModalidade
-            // 
-            this.txtModalidade.Location = new System.Drawing.Point(103, 33);
-            this.txtModalidade.Name = "txtModalidade";
-            this.txtModalidade.Size = new System.Drawing.Size(167, 20);
-            this.txtModalidade.TabIndex = 5;
-            // 
-            // txtProfessor
-            // 
-            this.txtProfessor.Location = new System.Drawing.Point(103, 62);
-            this.txtProfessor.Name = "txtProfessor";
-            this.txtProfessor.Size = new System.Drawing.Size(167, 20);
-            this.txtProfessor.TabIndex = 6;
-            // 
-            // txtAlunos
-            // 
-            this.txtAlunos.Location = new System.Drawing.Point(103, 140);
-            this.txtAlunos.Name = "txtAlunos";
-            this.txtAlunos.Size = new System.Drawing.Size(167, 20);
-            this.txtAlunos.TabIndex = 7;
-            // 
-            // txtHora
-            // 
-            this.txtHora.Location = new System.Drawing.Point(103, 114);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(167, 20);
-            this.txtHora.TabIndex = 8;
-            // 
-            // txtDia
-            // 
-            this.txtDia.Location = new System.Drawing.Point(103, 88);
-            this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(167, 20);
-            this.txtDia.TabIndex = 9;
             // 
             // ExcluirTurma
             // 
