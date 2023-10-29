@@ -32,9 +32,7 @@ namespace Estudiozinho
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtDia = new System.Windows.Forms.TextBox();
             this.txtHora = new System.Windows.Forms.TextBox();
-            this.txtAlunos = new System.Windows.Forms.TextBox();
             this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,15 +48,13 @@ namespace Estudiozinho
             // 
             this.groupBox2.Controls.Add(this.txtDia);
             this.groupBox2.Controls.Add(this.txtHora);
-            this.groupBox2.Controls.Add(this.txtAlunos);
             this.groupBox2.Controls.Add(this.txtProfessor);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(308, 35);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(295, 151);
+            this.groupBox2.Size = new System.Drawing.Size(295, 125);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Turma";
@@ -77,28 +73,12 @@ namespace Estudiozinho
             this.txtHora.Size = new System.Drawing.Size(167, 20);
             this.txtHora.TabIndex = 8;
             // 
-            // txtAlunos
-            // 
-            this.txtAlunos.Location = new System.Drawing.Point(104, 108);
-            this.txtAlunos.Name = "txtAlunos";
-            this.txtAlunos.Size = new System.Drawing.Size(167, 20);
-            this.txtAlunos.TabIndex = 7;
-            // 
             // txtProfessor
             // 
             this.txtProfessor.Location = new System.Drawing.Point(104, 30);
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(167, 20);
             this.txtProfessor.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Max Alunos:";
             // 
             // label5
             // 
@@ -189,9 +169,7 @@ namespace Estudiozinho
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtDia;
         private System.Windows.Forms.TextBox txtHora;
-        private System.Windows.Forms.TextBox txtAlunos;
         private System.Windows.Forms.TextBox txtProfessor;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

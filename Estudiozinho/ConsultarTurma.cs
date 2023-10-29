@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace Estudiozinho
 {
-    public partial class AtualizarTurma : Form
+    public partial class ConsultarTurma : Form
     {
-        public AtualizarTurma()
+        public ConsultarTurma()
         {
             InitializeComponent();
-            atualizaComboBoxTurma();
+            atualizaComboBox();
         }
 
-        public void atualizaComboBoxTurma()
+        public void atualizaComboBox()
         {
             Turma turma = new Turma();
             try
@@ -45,41 +45,31 @@ namespace Estudiozinho
             }
         }
 
-        private void limpar()
-        {
-            txtDia.Text = "";
-            txtHora.Text = "";
-            txtId.Text = "";
-            txtProfessor.Text = "";
-        }
-
         private void txtId_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Turma turma = new Turma(int.Parse(txtId.Text));
-            MySqlDataReader r = turma.consultarTurma();
-            if (r.HasRows)
-            {
-                r.Read();
-                txtHora.Text = r["horaTurma"].ToString();
-                txtProfessor.Text = r["professorTurma"].ToString();
-                txtDia.Text = r["diaSemanaTurma"].ToString();
-            }
-
-            DAO_Conexão.con.Close();
-            }
-
-        private void btnAtualizar_Click(object sender, EventArgs e)
         {
             try
             {
-                Turma turma = new Turma(txtProfessor.Text, txtDia.Text, txtHora.Text, 0);
-                turma.atualizarTurma(int.Parse(txtId.Text));
-                MessageBox.Show("Turma atualizada com sucesso!");
-                limpar();
+                int id = int.Parse(txtId.Text);
+                Turma turma = new Turma(id);
+                MySqlDataReader r = turma.consultarTurma();
+                r.Read();
+                txtProfessor.Text = r["professorTurma"].ToString();
+                txtDia.Text = r["diaSemanaTurma"].ToString();
+                mkdHora.Text = r["horaTurma"].ToString();
+                txtMatriculados.Text = r["nAlunosMatriculados"].ToString();
+
+                Modalidade idModalidade = new Modalidade(int.Parse(r["idModalidade"].ToString()));
+                DAO_Conexão.con.Close();
+                String descricao = idModalidade.consultaDescricao();
+                Modalidade modalidade = new Modalidade(descricao);
+                MySqlDataReader m = modalidade.consultaModalidade();
+                m.Read();
+                txtModalidade.Text = m["descricaoModalidade"].ToString();
+                txtMaximoAluno.Text = m["qntAlunos"].ToString();
             }
-            catch (Exception ex)
+            finally
             {
-                Console.WriteLine(ex.ToString());
+                DAO_Conexão.con.Close();
             }
         }
     }

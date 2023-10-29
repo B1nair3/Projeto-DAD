@@ -30,8 +30,6 @@ namespace Estudiozinho
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMaximoAluno = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.mkdHora = new System.Windows.Forms.MaskedTextBox();
             this.btnCadastar = new System.Windows.Forms.Button();
             this.txtDia = new System.Windows.Forms.TextBox();
@@ -49,8 +47,6 @@ namespace Estudiozinho
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtMaximoAluno);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.mkdHora);
             this.groupBox1.Controls.Add(this.btnCadastar);
             this.groupBox1.Controls.Add(this.txtDia);
@@ -67,25 +63,9 @@ namespace Estudiozinho
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turma";
             // 
-            // txtMaximoAluno
-            // 
-            this.txtMaximoAluno.Location = new System.Drawing.Point(92, 108);
-            this.txtMaximoAluno.Name = "txtMaximoAluno";
-            this.txtMaximoAluno.Size = new System.Drawing.Size(277, 20);
-            this.txtMaximoAluno.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Max Alunos:";
-            // 
             // mkdHora
             // 
-            this.mkdHora.Location = new System.Drawing.Point(333, 82);
+            this.mkdHora.Location = new System.Drawing.Point(342, 77);
             this.mkdHora.Mask = "00:00";
             this.mkdHora.Name = "mkdHora";
             this.mkdHora.Size = new System.Drawing.Size(36, 20);
@@ -93,7 +73,7 @@ namespace Estudiozinho
             // 
             // btnCadastar
             // 
-            this.btnCadastar.Location = new System.Drawing.Point(9, 134);
+            this.btnCadastar.Location = new System.Drawing.Point(18, 121);
             this.btnCadastar.Name = "btnCadastar";
             this.btnCadastar.Size = new System.Drawing.Size(360, 23);
             this.btnCadastar.TabIndex = 8;
@@ -103,21 +83,21 @@ namespace Estudiozinho
             // 
             // txtDia
             // 
-            this.txtDia.Location = new System.Drawing.Point(92, 82);
+            this.txtDia.Location = new System.Drawing.Point(101, 77);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(181, 20);
             this.txtDia.TabIndex = 6;
             // 
             // txtProfessor
             // 
-            this.txtProfessor.Location = new System.Drawing.Point(92, 56);
+            this.txtProfessor.Location = new System.Drawing.Point(101, 51);
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(277, 20);
             this.txtProfessor.TabIndex = 5;
             // 
             // txtModalidade
             // 
-            this.txtModalidade.Location = new System.Drawing.Point(92, 30);
+            this.txtModalidade.Location = new System.Drawing.Point(101, 25);
             this.txtModalidade.Name = "txtModalidade";
             this.txtModalidade.Size = new System.Drawing.Size(277, 20);
             this.txtModalidade.TabIndex = 4;
@@ -125,7 +105,7 @@ namespace Estudiozinho
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(294, 85);
+            this.label4.Location = new System.Drawing.Point(303, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 3;
@@ -134,7 +114,7 @@ namespace Estudiozinho
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 85);
+            this.label3.Location = new System.Drawing.Point(15, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 2;
@@ -143,7 +123,7 @@ namespace Estudiozinho
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 59);
+            this.label2.Location = new System.Drawing.Point(15, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
@@ -152,7 +132,7 @@ namespace Estudiozinho
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Location = new System.Drawing.Point(15, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 0;
@@ -207,8 +187,6 @@ namespace Estudiozinho
         private System.Windows.Forms.Button btnCadastar;
         private System.Windows.Forms.MaskedTextBox mkdHora;
         private System.Windows.Forms.TextBox txtDia;
-        private System.Windows.Forms.TextBox txtMaximoAluno;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn modalidade;
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Estudiozinho
 {
-    partial class Form5
+    partial class CadastrarModalidade
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@ namespace Estudiozinho
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDescricao = new System.Windows.Forms.ComboBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtAulas = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@ namespace Estudiozinho
             this.lblQntAluno = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,15 @@ namespace Estudiozinho
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidade";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.FormattingEnabled = true;
+            this.txtDescricao.Location = new System.Drawing.Point(117, 49);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(281, 21);
+            this.txtDescricao.TabIndex = 11;
+            this.txtDescricao.SelectedIndexChanged += new System.EventHandler(this.txtDescricao_SelectedIndexChanged);
             // 
             // btnCadastrar
             // 
@@ -127,22 +136,13 @@ namespace Estudiozinho
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
-            // txtDescricao
-            // 
-            this.txtDescricao.FormattingEnabled = true;
-            this.txtDescricao.Location = new System.Drawing.Point(117, 49);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(281, 21);
-            this.txtDescricao.TabIndex = 11;
-            this.txtDescricao.SelectedIndexChanged += new System.EventHandler(this.txtDescricao_SelectedIndexChanged);
-            // 
-            // Form5
+            // CadastrarModalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 228);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form5";
+            this.Name = "CadastrarModalidade";
             this.Text = "Cadastro de Modalidade";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

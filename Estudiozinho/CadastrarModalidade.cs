@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Estudiozinho
 {
-    public partial class Form5 : Form
+    public partial class CadastrarModalidade : Form
     {
         DialogResult atualizar = DialogResult.No;
         int modalidadeEscolhida = -20;
-        public Form5()
+        public CadastrarModalidade()
         {
             InitializeComponent();
             atualizaComboBox();

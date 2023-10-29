@@ -31,8 +31,7 @@ namespace Estudiozinho
             MySqlDataReader r = modalidadeEscolhida.consultaModalidade();
             r.Read();
             int idModalidadeEscolhida = int.Parse(r["idEstudio_Modalidade"].ToString());
-            int maxAlunos = int.Parse(txtMaximoAluno.Text);
-            Turma turma = new Turma(txtProfessor.Text, txtDia.Text, mkdHora.Text, idModalidadeEscolhida, maxAlunos);
+            Turma turma = new Turma(txtProfessor.Text, txtDia.Text, mkdHora.Text, idModalidadeEscolhida);
             DAO_Conexão.con.Close();
 
             if (turma.cadastrarTurma())
@@ -55,7 +54,6 @@ namespace Estudiozinho
         public void limpar()
         {
             txtDia.Text = "";
-            txtMaximoAluno.Text = "";
             txtModalidade.Text = "";
             txtProfessor.Text = "";
             mkdHora.Text = "";

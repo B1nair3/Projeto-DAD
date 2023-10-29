@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,11 @@ namespace Estudiozinho
         public MatricularAluno()
         {
             InitializeComponent();
+            string maximo = "Falha";
+            string descricao = "Falha";
+            List<Modalidade> listaModalidades = new List<Modalidade>();
+            List<Turma> listaTurmas = new List<Turma>();
+
             Aluno aluno = new Aluno();
             MySqlDataReader rAluno = aluno.consultarTodosAlunos();
             while (rAluno.Read())
@@ -24,16 +30,29 @@ namespace Estudiozinho
             }
             DAO_Conexão.con.Close();
 
-            Turma turma = new Turma();
-            MySqlDataReader rTurma = turma.consultaTodasTurmas();
-            while (rTurma.Read())
+            Turma turmaMod = new Turma();
+            MySqlDataReader rTurmaMod = turmaMod.consultaTodasTurmas();
+            while (rTurmaMod.Read())
             {
-                Modalidade modalidade = new Modalidade(int.Parse(rTurma["idModalidade"].ToString()));
-                dgwTurma.Rows.Add(rTurma["professorTurma"].ToString(), modalidade.consultaDescricao(),
-                    rTurma["diaSemanaTurma"].ToString(), rTurma["horaTurma"].ToString(), rTurma["nAlunosMatriculados"].ToString(),
-                    modalidade.consultaMaximo());
+                Modalidade modalidade = new Modalidade(int.Parse(rTurmaMod["idModalidade"].ToString()));
+                listaModalidades.Add(modalidade);
             }
             DAO_Conexão.con.Close();
+
+            foreach (Modalidade m in listaModalidades)
+            {
+                descricao = m.consultaDescricao();
+                maximo = m.consultaMaximo();
+
+                Turma turma = new Turma(m.Id);
+                MySqlDataReader rTurma = turma.consultarTurmaModalidade();
+                while (rTurma.Read())
+                {
+                    dgwTurma.Rows.Add(rTurma["professorTurma"].ToString(), descricao, rTurma["diaSemanaTurma"].ToString(),
+                        rTurma["horaTurma"].ToString(), rTurma["nAlunosMatriculados"].ToString(), maximo);
+                }
+                DAO_Conexão.con.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

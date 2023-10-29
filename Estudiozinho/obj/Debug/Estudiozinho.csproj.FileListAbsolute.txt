@@ -96,10 +96,6 @@ C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.C
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Excluir.resources
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ExcluirModalidade.resources
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ExcluirTurma.resources
-C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Form1.resources
-C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Form2.resources
-C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Form3.resources
-C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Form5.resources
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Properties.Resources.resources
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.csproj.GenerateResource.cache
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.csproj.CoreCompileInputs.cache
@@ -107,3 +103,10 @@ C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.c
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.exe
 C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.pdb
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.MatricularAluno.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.MatricularAluno.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ConsultarModalidade.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Inicio.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.CadastrarLogin.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.CadastrarAluno.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.CadastrarModalidade.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ConsultarTurma.resources

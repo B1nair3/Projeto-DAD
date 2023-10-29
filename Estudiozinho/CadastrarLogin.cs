@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Estudiozinho
 {
-    public partial class Form2 : Form
+    public partial class CadastrarLogin : Form
     {
-        public Form2()
+        public CadastrarLogin()
         {
             InitializeComponent();
         }

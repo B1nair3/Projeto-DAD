@@ -62,6 +62,18 @@
     <Compile Include="CadastrarTurma.Designer.cs">
       <DependentUpon>CadastrarTurma.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarModalidade.Designer.cs">
+      <DependentUpon>ConsultarModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarTurma.Designer.cs">
+      <DependentUpon>ConsultarTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO_Conexão.cs" />
     <Compile Include="Excluir.cs">
       <SubType>Form</SubType>
@@ -81,29 +93,29 @@
     <Compile Include="ExcluirTurma.Designer.cs">
       <DependentUpon>ExcluirTurma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="CadastrarLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="CadastrarLogin.Designer.cs">
+      <DependentUpon>CadastrarLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="CadastrarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="CadastrarAluno.Designer.cs">
+      <DependentUpon>CadastrarAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="CadastrarModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="CadastrarModalidade.Designer.cs">
+      <DependentUpon>CadastrarModalidade.cs</DependentUpon>
     </Compile>
     <Compile Include="MatricularAluno.cs">
       <SubType>Form</SubType>
@@ -121,6 +133,12 @@
     <EmbeddedResource Include="CadastrarTurma.resx">
       <DependentUpon>CadastrarTurma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarModalidade.resx">
+      <DependentUpon>ConsultarModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarTurma.resx">
+      <DependentUpon>ConsultarTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Excluir.resx">
       <DependentUpon>Excluir.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,17 +148,17 @@
     <EmbeddedResource Include="ExcluirTurma.resx">
       <DependentUpon>ExcluirTurma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="CadastrarLogin.resx">
+      <DependentUpon>CadastrarLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="CadastrarAluno.resx">
+      <DependentUpon>CadastrarAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="CadastrarModalidade.resx">
+      <DependentUpon>CadastrarModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MatricularAluno.resx">
       <DependentUpon>MatricularAluno.cs</DependentUpon>

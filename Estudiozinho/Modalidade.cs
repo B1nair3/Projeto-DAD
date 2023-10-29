@@ -20,6 +20,7 @@ namespace Estudiozinho
         public float Preco { get => preco; set => preco = value; }
         public int QntAlunos { get => qntAlunos; set => qntAlunos = value; }
         public int QntAulas { get => qntAulas; set => qntAulas = value; }
+        public int Id { get => id; set => id = value; }
 
         public Modalidade(string descricao, float preco, int qntAlunos, int qntAulas)
         {
@@ -36,7 +37,7 @@ namespace Estudiozinho
 
         public Modalidade(int id)
         {
-            this.id = id;
+            this.Id = id;
         }
 
         public Modalidade(){}
@@ -84,11 +85,11 @@ namespace Estudiozinho
         public String consultaDescricao()
         {
             MySqlDataReader resultado = null;
-            String modalidade = "";
+            String modalidade = "penis";
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + id, DAO_Conexão.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + Id, DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
                 resultado.Read();
                 modalidade = resultado["descricaoModalidade"].ToString();
@@ -97,18 +98,21 @@ namespace Estudiozinho
             {
                 Console.WriteLine(ex.ToString());
             }
-
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
             return modalidade;
         }
 
         public String consultaMaximo()
         {
             MySqlDataReader resultado = null;
-            String modalidade = "";
+            String modalidade = "penis";
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + id, DAO_Conexão.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + Id, DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
                 resultado.Read();
                 modalidade = resultado["qntAlunos"].ToString();
@@ -117,7 +121,10 @@ namespace Estudiozinho
             {
                 Console.WriteLine(ex.ToString());
             }
-
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
             return modalidade;
         }
 
@@ -138,7 +145,6 @@ namespace Estudiozinho
             return resultado;
         }
         
-
         public bool atualizarModalidade(int id)
         {
             bool cad = false;

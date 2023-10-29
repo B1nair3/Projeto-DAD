@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Estudiozinho
 {
-    public partial class Form3 : Form
+    public partial class CadastrarAluno : Form
     {
         DialogResult resultado = DialogResult.No;
-        public Form3()
+        public CadastrarAluno()
         {
             InitializeComponent();
         }

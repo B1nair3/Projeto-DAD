@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Estudiozinho
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
             if (DAO_Conexão.getConexao("143.106.241.3", "cl202235", "cl202235", "cl*17062007"))
@@ -28,7 +28,7 @@ namespace Estudiozinho
 
         private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 cadastrarLogin = new Form2();
+            CadastrarLogin cadastrarLogin = new CadastrarLogin();
             cadastrarLogin.MdiParent = this;
             cadastrarLogin.Show();
         }
@@ -58,14 +58,17 @@ namespace Estudiozinho
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
                 cadastrarLoginToolStripMenuItem.Enabled = false;
-                turmaToolStripMenuItem.Enabled = false;
-                modalidadeToolStripMenuItem1.Enabled = false;
+                cadastrarModalidadeToolStripMenuItem.Enabled = false;
+                excluirToolStripMenuItem1.Enabled = false;
+                cadastrarTurmaToolStripMenuItem.Enabled = false;
+                atualizarTurmaToolStripMenuItem.Enabled = false;
+                excluirTurmaToolStripMenuItem.Enabled = false;
             }
         }
 
         private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 cadastrarAluno = new Form3();
+            CadastrarAluno cadastrarAluno = new CadastrarAluno();
             cadastrarAluno.MdiParent = this;
             cadastrarAluno.Show();
         }
@@ -79,7 +82,7 @@ namespace Estudiozinho
 
         private void cadastrarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form5 cadastrarModalidade = new Form5();
+            CadastrarModalidade cadastrarModalidade = new CadastrarModalidade();
             cadastrarModalidade.MdiParent = this;
             cadastrarModalidade.Show();
         }
@@ -117,7 +120,7 @@ namespace Estudiozinho
 
         private void cadastrarModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Form5 cadModalidade = new Form5();
+            CadastrarModalidade cadModalidade = new CadastrarModalidade();
             cadModalidade.MdiParent = this;
             cadModalidade.Show();
         }
@@ -141,6 +144,20 @@ namespace Estudiozinho
             MatricularAluno mAluno = new MatricularAluno();
             mAluno.MdiParent = this;
             mAluno.Show();
+        }
+
+        private void consultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarModalidade consultarModalidade = new ConsultarModalidade();
+            consultarModalidade.MdiParent = this;
+            consultarModalidade.Show();
+        }
+
+        private void consultarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarTurma consultarTurma = new ConsultarTurma();
+            consultarTurma.MdiParent = this;
+            consultarTurma.Show();
         }
     }
 }

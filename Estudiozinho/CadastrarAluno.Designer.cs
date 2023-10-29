@@ -1,7 +1,7 @@
 ﻿
 namespace Estudiozinho
 {
-    partial class Form3
+    partial class CadastrarAluno
     {
         /// <summary>
         /// Required designer variable.
