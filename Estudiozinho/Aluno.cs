@@ -41,10 +41,12 @@ namespace Estudiozinho
             setFoto(foto);
             setAtivo(ativo);
         }
+
         public Aluno(string cpf)
         {
             setCpf(cpf);
         }
+
         public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep,
             string cidade, string estado, string telefone, string email)
         {
@@ -60,7 +62,13 @@ namespace Estudiozinho
             setTelefone(telefone);
             setEmail(email);
         }
+
         public Aluno(){}
+
+        public Aluno(string nome, int gambiarra)
+        {
+            this.nome = nome;
+        }
 
         public bool verificaCPF() //string CPF - sem parâmetro
         {
@@ -146,13 +154,13 @@ namespace Estudiozinho
             return existe;
         }
 
-        public MySqlDataReader consultarTodosAlunos()
+        public MySqlDataReader consultarAlunoNome()
         {
             MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno", DAO_Conexão.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno where nomeAluno = '" + nome + "'", DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -161,6 +169,59 @@ namespace Estudiozinho
             }
 
             return resultado;
+        }
+
+        public MySqlDataReader consultarTodosAlunos()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno where ativo = 0", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
+        public MySqlDataReader consultarTodosAlunosDesativos()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno where ativo = 1", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
+        public bool reativarAluno()
+        {
+            bool cad = false;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set ativo = 0 where nomeAluno = '" + nome + "'", DAO_Conexão.con);
+                atualiza.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
+            return cad;
         }
 
         public bool atualizarAluno()

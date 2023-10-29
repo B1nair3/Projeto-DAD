@@ -49,7 +49,7 @@ namespace Estudiozinho
             {
                 DAO_Conexão.con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qntAlunos, qntAulas)" +
-                    "values ('" + descricao + "'," + preco + "," + qntAlunos + "," + qntAulas + ");", DAO_Conexão.con);
+                    "values ('" + descricao + "','" + preco + "'," + qntAlunos + "," + qntAulas + ")", DAO_Conexão.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -80,6 +80,32 @@ namespace Estudiozinho
             }
 
             return resultado;
+        }
+
+        public bool existeModalidade()
+        {
+            bool existe = false;
+            MySqlDataReader resultado = null;
+
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where descricaoModalidade = '"
+                    + descricao + "'", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                    existe = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
+
+            return existe;
         }
 
         public String consultaDescricao()
@@ -152,7 +178,7 @@ namespace Estudiozinho
             {
                 DAO_Conexão.con.Open();
                 MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidade set qntAlunos = " + qntAlunos + ", qntAulas = " + qntAulas +
-                    ", precoModalidade = " + preco + ", descricaoModalidade = '" + descricao + "' where idEstudio_Modalidade = " + id, DAO_Conexão.con);
+                    ", precoModalidade = '" + preco + "', descricaoModalidade = '" + descricao + "' where idEstudio_Modalidade = " + id, DAO_Conexão.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }

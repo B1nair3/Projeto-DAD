@@ -62,6 +62,12 @@
     <Compile Include="CadastrarTurma.Designer.cs">
       <DependentUpon>CadastrarTurma.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarAluno.Designer.cs">
+      <DependentUpon>ConsultarAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,12 +132,21 @@
     <Compile Include="Modalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReativarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReativarAluno.Designer.cs">
+      <DependentUpon>ReativarAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Turma.cs" />
     <EmbeddedResource Include="AtualizarTurma.resx">
       <DependentUpon>AtualizarTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarTurma.resx">
       <DependentUpon>CadastrarTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarAluno.resx">
+      <DependentUpon>ConsultarAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarModalidade.resx">
       <DependentUpon>ConsultarModalidade.cs</DependentUpon>
@@ -172,6 +187,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReativarAluno.resx">
+      <DependentUpon>ReativarAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

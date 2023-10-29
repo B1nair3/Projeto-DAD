@@ -159,5 +159,19 @@ namespace Estudiozinho
             consultarTurma.MdiParent = this;
             consultarTurma.Show();
         }
+
+        private void consultarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarAluno aluno = new ConsultarAluno(); 
+            aluno.MdiParent = this;
+            aluno.Show();
+        }
+
+        private void reativarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReativarAluno reativar = new ReativarAluno();
+            reativar.MdiParent = this;
+            reativar.Show();
+        }
     }
 }

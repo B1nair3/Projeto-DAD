@@ -55,11 +55,18 @@ namespace Estudiozinho
 
             if (atualizar == DialogResult.No)
             {
-                if (modalidade.cadastrarModalidade())
+                if (modalidade.existeModalidade() == false)
                 {
-                    MessageBox.Show("Cadastro concluido!");
-                    atualizaComboBox();
-                    limpar();
+                    if (modalidade.cadastrarModalidade())
+                    {
+                        MessageBox.Show("Cadastro concluido!");
+                        atualizaComboBox();
+                        limpar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha no cadastro!");
+                    }
                 }
                 else
                 {
@@ -114,7 +121,11 @@ namespace Estudiozinho
                 {
                     DAO_Conexão.con.Close();
                 }
-            }    
+            }
+            else
+            {
+                limpar();
+            }
         }
     }
 }
