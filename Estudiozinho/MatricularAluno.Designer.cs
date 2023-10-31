@@ -52,7 +52,7 @@ namespace Estudiozinho
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaximo = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.TextBox();
+            this.txtDia = new System.Windows.Forms.TextBox();
             this.txtModalidade = new System.Windows.Forms.TextBox();
             this.txtProfessor = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -69,15 +69,19 @@ namespace Estudiozinho
             // 
             // dgwAluno
             // 
+            this.dgwAluno.AllowUserToAddRows = false;
             this.dgwAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.CPF});
             this.dgwAluno.Location = new System.Drawing.Point(12, 12);
+            this.dgwAluno.MultiSelect = false;
             this.dgwAluno.Name = "dgwAluno";
             this.dgwAluno.ReadOnly = true;
+            this.dgwAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwAluno.Size = new System.Drawing.Size(244, 227);
             this.dgwAluno.TabIndex = 0;
+            this.dgwAluno.SelectionChanged += new System.EventHandler(this.dgwAluno_SelectionChanged);
             // 
             // Nome
             // 
@@ -93,6 +97,7 @@ namespace Estudiozinho
             // 
             // dgwTurma
             // 
+            this.dgwTurma.AllowUserToAddRows = false;
             this.dgwTurma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -102,10 +107,13 @@ namespace Estudiozinho
             this.AlunosMatriculados,
             this.MaximoAlunos});
             this.dgwTurma.Location = new System.Drawing.Point(286, 12);
+            this.dgwTurma.MultiSelect = false;
             this.dgwTurma.Name = "dgwTurma";
             this.dgwTurma.ReadOnly = true;
+            this.dgwTurma.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwTurma.Size = new System.Drawing.Size(644, 227);
             this.dgwTurma.TabIndex = 1;
+            this.dgwTurma.SelectionChanged += new System.EventHandler(this.dgwTurma_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -164,6 +172,7 @@ namespace Estudiozinho
             this.button2.TabIndex = 3;
             this.button2.Text = "Limpar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -186,7 +195,7 @@ namespace Estudiozinho
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtMaximo);
-            this.groupBox3.Controls.Add(this.txtHora);
+            this.groupBox3.Controls.Add(this.txtDia);
             this.groupBox3.Controls.Add(this.txtModalidade);
             this.groupBox3.Controls.Add(this.txtProfessor);
             this.groupBox3.Location = new System.Drawing.Point(274, 30);
@@ -276,13 +285,13 @@ namespace Estudiozinho
             this.txtMaximo.Size = new System.Drawing.Size(63, 20);
             this.txtMaximo.TabIndex = 7;
             // 
-            // txtHora
+            // txtDia
             // 
-            this.txtHora.Enabled = false;
-            this.txtHora.Location = new System.Drawing.Point(202, 87);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(91, 20);
-            this.txtHora.TabIndex = 5;
+            this.txtDia.Enabled = false;
+            this.txtDia.Location = new System.Drawing.Point(202, 87);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(91, 20);
+            this.txtDia.TabIndex = 5;
             // 
             // txtModalidade
             // 
@@ -379,7 +388,7 @@ namespace Estudiozinho
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtMaximo;
         private System.Windows.Forms.TextBox txtMatriculados;
-        private System.Windows.Forms.TextBox txtHora;
+        private System.Windows.Forms.TextBox txtDia;
         private System.Windows.Forms.TextBox txtModalidade;
         private System.Windows.Forms.TextBox txtProfessor;
         private System.Windows.Forms.GroupBox groupBox2;

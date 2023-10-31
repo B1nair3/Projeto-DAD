@@ -37,7 +37,6 @@ namespace Estudiozinho
             this.diaSemana = diaSemana;
             this.hora = hora;
             this.modalidade = modalidade;
-            this.alunos = alunos;
         }
 
         public bool cadastrarTurma()
@@ -166,8 +165,9 @@ namespace Estudiozinho
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Turma set professorTurma = '" +
-                    professor + "', diaSemanaTurma = '" + diaSemana + "', horaTurma = '" + hora + "' where idEstudio_Turma = " + id, DAO_Conexão.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Turma set professorTurma = '" + professor + 
+                    "', diaSemanaTurma = '" + diaSemana + "', horaTurma = '" + hora + 
+                    "' where idEstudio_Turma = " + id, DAO_Conexão.con);
                 atualiza.ExecuteNonQuery();
                 att = true;
             }
