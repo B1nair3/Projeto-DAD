@@ -142,6 +142,24 @@ namespace Estudiozinho
             return resultado;
         }
 
+        public MySqlDataReader consultarIdTurma()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where professorTurma = '" + professor +
+                    "' and diaSemanaTurma = '" + diaSemana + "' and horaTurma = '" + hora + "' and idModalidade = " + modalidade, DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
+
         public MySqlDataReader consultarTurmaModalidade()
         {
             MySqlDataReader resultado = null;

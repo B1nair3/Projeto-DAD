@@ -190,11 +190,11 @@ namespace Estudiozinho
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.mkdHora);
             this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.txtMaximo);
             this.groupBox3.Controls.Add(this.txtMatriculados);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtMaximo);
             this.groupBox3.Controls.Add(this.txtDia);
             this.groupBox3.Controls.Add(this.txtModalidade);
             this.groupBox3.Controls.Add(this.txtProfessor);
@@ -245,7 +245,7 @@ namespace Estudiozinho
             // txtMatriculados
             // 
             this.txtMatriculados.Enabled = false;
-            this.txtMatriculados.Location = new System.Drawing.Point(528, 87);
+            this.txtMatriculados.Location = new System.Drawing.Point(527, 35);
             this.txtMatriculados.Name = "txtMatriculados";
             this.txtMatriculados.Size = new System.Drawing.Size(63, 20);
             this.txtMatriculados.TabIndex = 6;
@@ -280,7 +280,7 @@ namespace Estudiozinho
             // txtMaximo
             // 
             this.txtMaximo.Enabled = false;
-            this.txtMaximo.Location = new System.Drawing.Point(528, 35);
+            this.txtMaximo.Location = new System.Drawing.Point(527, 87);
             this.txtMaximo.Name = "txtMaximo";
             this.txtMaximo.Size = new System.Drawing.Size(63, 20);
             this.txtMaximo.TabIndex = 7;

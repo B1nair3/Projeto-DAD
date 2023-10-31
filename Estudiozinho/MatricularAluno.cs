@@ -64,23 +64,25 @@ namespace Estudiozinho
         {
             try
             {
-                Aluno aluno = new Aluno(mkdCpfAluno.Text);
-                MySqlDataReader a = aluno.consultarAluno01();
-                a.Read();
-                string cpf = a["cpfAluno"].ToString();
-                DAO_Conexão.con.Close();
+                int idTurma = -91;
+                int idModalidade = -91;
+                string cpf = mkdCpfAluno.Text;
+                int maximo = int.Parse(txtMaximo.Text);
+                int matriculados = int.Parse(txtMatriculados.Text);
 
                 Modalidade modalidade = new Modalidade(txtModalidade.Text);
                 MySqlDataReader m = modalidade.consultaModalidade();
                 m.Read();
-                Turma turma = new Turma(int.Parse(m["idEstudio_Modalidade"].ToString()));
-                int maximo = int.Parse(m["qntAlunos"].ToString());
+                idModalidade = int.Parse(m["idEstudio_Modalidade"].ToString());
                 DAO_Conexão.con.Close();
 
-                MySqlDataReader t = turma.consultarTurma();
-                t.Read();
-                int idTurma = int.Parse(t["idEstudio_Turma"].ToString());
-                int matriculados = int.Parse(t["nAlunosMatriculados"].ToString());
+                Turma turma = new Turma(txtProfessor.Text, txtDia.Text, mkdHora.Text, idModalidade);
+                Console.WriteLine("\n\n" + txtProfessor.Text + "\n" + txtDia.Text + "\n" + mkdHora.Text + "\n" + idModalidade);
+                MySqlDataReader t = turma.consultarIdTurma();
+                while (t.Read())
+                {
+                     idTurma = int.Parse(t["idEstudio_Turma"].ToString());
+                }
                 DAO_Conexão.con.Close();
 
                 Classe classe = new Classe(idTurma, cpf);

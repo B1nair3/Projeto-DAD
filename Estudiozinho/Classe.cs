@@ -32,8 +32,8 @@ namespace Estudiozinho
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand cadastra = new MySqlCommand("insert into Estudio_Classe (idEstudioTurma, idEstudio_Aluno) " +
-                    "values (" + idTurma + "," + cpfAluno + ")", DAO_Conexão.con);
+                MySqlCommand cadastra = new MySqlCommand("insert into Estudio_Classe (idTurma, cpfAluno) " +
+                    "values (" + idTurma + ",'" + cpfAluno + "')", DAO_Conexão.con);
                 cadastra.ExecuteNonQuery();
                 cad = true;
             }
