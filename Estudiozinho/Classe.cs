@@ -47,5 +47,22 @@ namespace Estudiozinho
             }
             return cad;
         }
+
+        public MySqlDataReader defineMatriculados()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT count(cpfAluno) from Estudio_Classe where idTurma = " + idTurma, DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
     }
 }

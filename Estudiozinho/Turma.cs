@@ -142,6 +142,23 @@ namespace Estudiozinho
             return resultado;
         }
 
+        public MySqlDataReader defineMatriculados()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("update Estudio_Classe set nAlunosMatriculados =" + idTurma, DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
+
         public MySqlDataReader consultarIdTurma()
         {
             MySqlDataReader resultado = null;

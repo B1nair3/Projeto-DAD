@@ -90,6 +90,9 @@ namespace Estudiozinho
                 {
                     if (classe.cadastrarAluno())
                     {
+                        MySqlDataReader c = classe.consultaMatriculados();
+                        c.Read();
+                        Turma matricular 
                         MessageBox.Show("Aluno cadastrado na turma!");
                     }
                     else
