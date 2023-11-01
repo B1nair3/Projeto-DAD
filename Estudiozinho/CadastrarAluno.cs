@@ -21,8 +21,9 @@ namespace Estudiozinho
 
         private void btmCadastrar_Click(object sender, EventArgs e)
         {
+            byte[] foto = ConverterFotoParaByteArray();
             Aluno aluno = new Aluno(mkdCpf.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComplemento.Text, mkdCep.Text,
-            txtCidade.Text, txtEstado.Text, mkdTelefone.Text, txtEmail.Text);
+            txtCidade.Text, txtEstado.Text, mkdTelefone.Text, txtEmail.Text, foto);
 
             if (resultado == DialogResult.Yes)
             {
@@ -115,6 +116,39 @@ namespace Estudiozinho
                 txtEstado.Text = "";
                 txtEmail.Text = "";
                 txtEndereco.Text = "";
+        }
+
+        private void btmFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            dialog.Title = "Abrir Foto";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(dialog.OpenFile());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possivel carregar a foto: " + ex.Message);
+                }
+            }
+            dialog.Dispose();
+        }
+
+        private byte[] ConverterFotoParaByteArray()
+        {
+            using (var stream = new System.IO.MemoryStream()) 
+            {
+                pictureBox1.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                stream.Seek(0, System.IO.SeekOrigin.Begin);
+                byte[] bArray = new byte[stream.Length];
+                stream.Read(bArray, 0, System.Convert.ToInt32(stream.Length));
+                return bArray;
+            }
         }
     }
 }

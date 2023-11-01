@@ -17,14 +17,19 @@ namespace Estudiozinho
         public MatricularAluno()
         {
             InitializeComponent();
+            atualizaDataGridView();
+        }
+
+        private void atualizaDataGridView()
+        {
             string maximo = "Falha";
             string descricao = "Falha";
             List<Modalidade> listaModalidades = new List<Modalidade>();
-            List<Turma> listaTurmas = new List<Turma>();
             List<int> listaValidacao = new List<int>();
 
             Aluno aluno = new Aluno();
             MySqlDataReader rAluno = aluno.consultarTodosAlunos();
+            dgwAluno.Rows.Clear();
             while (rAluno.Read())
             {
                 dgwAluno.Rows.Add(rAluno["nomeAluno"].ToString(), rAluno["cpfAluno"].ToString());
@@ -44,6 +49,7 @@ namespace Estudiozinho
             }
             DAO_Conexão.con.Close();
 
+            dgwTurma.Rows.Clear();
             foreach (Modalidade m in listaModalidades)
             {
                 descricao = m.consultaDescricao();
@@ -58,7 +64,30 @@ namespace Estudiozinho
                 }
                 DAO_Conexão.con.Close();
             }
+            atualizaMatriculados();
         }
+
+        private void atualizaMatriculados()
+        {
+            List<Turma> listaTurma = new List<Turma>();
+            Turma turma = new Turma();
+
+            MySqlDataReader rTurma = turma.consultaTodasTurmas();
+            while (rTurma.Read()) 
+            {
+                listaTurma.Add(turma);
+            }
+            DAO_Conexão.con.Close();
+
+            foreach (Turma t in listaTurma)
+            {
+                int idTurma = t.consultarIdTurma();
+                Classe classe = new Classe(idTurma);
+                int qntMatriculados = classe.consultaMatriculados();
+                Turma definir = new Turma(idTurma, qntMatriculados);
+                definir.defineMatriculados();
+            }
+        } 
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -77,12 +106,8 @@ namespace Estudiozinho
                 DAO_Conexão.con.Close();
 
                 Turma turma = new Turma(txtProfessor.Text, txtDia.Text, mkdHora.Text, idModalidade);
-                Console.WriteLine("\n\n" + txtProfessor.Text + "\n" + txtDia.Text + "\n" + mkdHora.Text + "\n" + idModalidade);
-                MySqlDataReader t = turma.consultarIdTurma();
-                while (t.Read())
-                {
-                     idTurma = int.Parse(t["idEstudio_Turma"].ToString());
-                }
+                idTurma = turma.consultarIdTurma();
+
                 DAO_Conexão.con.Close();
 
                 Classe classe = new Classe(idTurma, cpf);
@@ -90,9 +115,7 @@ namespace Estudiozinho
                 {
                     if (classe.cadastrarAluno())
                     {
-                        MySqlDataReader c = classe.consultaMatriculados();
-                        c.Read();
-                        Turma matricular 
+                        atualizaDataGridView();
                         MessageBox.Show("Aluno cadastrado na turma!");
                     }
                     else

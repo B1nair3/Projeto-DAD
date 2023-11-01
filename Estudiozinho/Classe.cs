@@ -23,6 +23,11 @@ namespace Estudiozinho
             this.cpfAluno = cpfAluno;
         }
 
+        public Classe(int idTurma)
+        {
+            this.idTurma = idTurma;
+        }
+
         public int IdTurma { get => idTurma; set => idTurma = value; }
         public string IdAluno { get => cpfAluno; set => cpfAluno = value; }
 
@@ -48,21 +53,30 @@ namespace Estudiozinho
             return cad;
         }
 
-        public MySqlDataReader defineMatriculados()
+        public int consultaMatriculados()
         {
             MySqlDataReader resultado = null;
+            int qnt = 0;
             try
             {
                 DAO_Conexão.con.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT count(cpfAluno) from Estudio_Classe where idTurma = " + idTurma, DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    qnt = int.Parse(resultado["count(cpfAluno)"].ToString());
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
 
-            return resultado;
+            return qnt;
         }
     }
 }

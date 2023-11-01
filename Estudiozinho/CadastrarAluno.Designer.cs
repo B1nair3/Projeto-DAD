@@ -30,6 +30,7 @@ namespace Estudiozinho
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btmCadastrar = new System.Windows.Forms.Button();
             this.mkdTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -56,7 +57,7 @@ namespace Estudiozinho
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btmFoto = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +95,17 @@ namespace Estudiozinho
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Cadastrais";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label12.ForeColor = System.Drawing.Color.LightGray;
+            this.label12.Location = new System.Drawing.Point(353, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(217, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "*Para atualizar digite um CPF já cadastrado!*";
             // 
             // btnLimpar
             // 
@@ -298,9 +310,11 @@ namespace Estudiozinho
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(594, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(194, 190);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
@@ -312,19 +326,13 @@ namespace Estudiozinho
             this.btmFoto.TabIndex = 23;
             this.btmFoto.Text = "Escolher Foto";
             this.btmFoto.UseVisualStyleBackColor = true;
+            this.btmFoto.Click += new System.EventHandler(this.btmFoto_Click);
             // 
-            // label12
+            // openFileDialog1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label12.ForeColor = System.Drawing.Color.LightGray;
-            this.label12.Location = new System.Drawing.Point(353, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(217, 13);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "*Para atualizar digite um CPF já cadastrado!*";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Form3
+            // CadastrarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,7 +340,7 @@ namespace Estudiozinho
             this.Controls.Add(this.btmFoto);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form3";
+            this.Name = "CadastrarAluno";
             this.Text = "Cadastrar Aluno";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -371,5 +379,6 @@ namespace Estudiozinho
         private System.Windows.Forms.Button btmFoto;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

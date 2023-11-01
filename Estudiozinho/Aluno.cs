@@ -9,7 +9,6 @@ namespace Estudiozinho
 {
     class Aluno
     {
-        #region
         private string cpf;
         private string nome;
         private string rua;
@@ -25,7 +24,7 @@ namespace Estudiozinho
         private bool ativo;
 
         public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep,
-            string cidade, string estado, string telefone, string email, byte[] foto, bool ativo)
+            string cidade, string estado, string telefone, string email, byte[] foto)
         {
             setCpf(cpf);
             setNome(nome);
@@ -39,7 +38,6 @@ namespace Estudiozinho
             setTelefone(telefone);
             setEmail(email);
             setFoto(foto);
-            setAtivo(ativo);
         }
 
         public Aluno(string cpf)
@@ -72,6 +70,9 @@ namespace Estudiozinho
 
         public bool verificaCPF() //string CPF - sem parâmetro
         {
+            bool retorno = true;
+            return retorno;
+            /*
             int soma, resto, cont = 0;
             soma = 0;
 
@@ -108,6 +109,7 @@ namespace Estudiozinho
             if (resto != int.Parse(cpf.Substring(10, 1))) return false;
 
             return true;
+            */
         }
 
         public bool cadastrarAluno() {
@@ -116,9 +118,10 @@ namespace Estudiozinho
             {
                 DAO_Conexão.con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno," +
-                    "complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values ('" + cpf + "','" + nome +
+                    "complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno, fotoAluno) values ('" + cpf + "','" + nome +
                     "','" + rua + "','" + numero + "','" + bairro + "','" + complemento + "','" + cep + "','" + cidade + "','" + estado + "','" +
-                    telefone + "','" + email + "')", DAO_Conexão.con);
+                    telefone + "','" + email + "',@foto)", DAO_Conexão.con);
+                insere.Parameters.AddWithValue("foto", this.foto);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -414,6 +417,5 @@ namespace Estudiozinho
         {
             this.ativo = ativo;
         }
-        #endregion
     }
 }
