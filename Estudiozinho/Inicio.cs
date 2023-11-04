@@ -16,7 +16,7 @@ namespace Estudiozinho
         {
             InitializeComponent();
             if (DAO_Conexão.getConexao("143.106.241.3", "cl202235", "cl202235", "cl*17062007"))
-                Console.WriteLine("Conectado!");
+                Console.WriteLine("\nConectado!\n");
             else Console.WriteLine("Erro de conexão!");
             menuStrip1.Enabled = false;
         }
@@ -179,6 +179,13 @@ namespace Estudiozinho
             ReativarModalidade reativarModal = new ReativarModalidade();
             reativarModal.MdiParent = this;
             reativarModal.Show();
+        }
+
+        private void dToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DesmatricularAluno desmatricular = new DesmatricularAluno();
+            desmatricular.MdiParent = this;
+            desmatricular.Show();
         }
     }
 }

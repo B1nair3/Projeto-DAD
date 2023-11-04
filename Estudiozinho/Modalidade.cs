@@ -110,15 +110,15 @@ namespace Estudiozinho
 
         public String consultaDescricao()
         {
-            MySqlDataReader resultado = null;
-            String modalidade = "penis";
+            MySqlDataReader resultado;
+            String modalidade = "Falha";
             try
             {
                 DAO_Conexão.con.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidade where idEstudio_Modalidade = " + Id, DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
-                resultado.Read();
-                modalidade = resultado["descricaoModalidade"].ToString();
+                if (resultado.Read())
+                    modalidade = resultado["descricaoModalidade"].ToString();
             }
             catch (Exception ex)
             {
@@ -133,8 +133,8 @@ namespace Estudiozinho
 
         public String consultaMaximo()
         {
-            MySqlDataReader resultado = null;
-            String modalidade = "penis";
+            MySqlDataReader resultado;
+            String modalidade = "Falha";
             try
             {
                 DAO_Conexão.con.Open();

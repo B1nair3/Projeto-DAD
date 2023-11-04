@@ -118,3 +118,4 @@ C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.Cadastrar
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.CadastrarModalidade.resources
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ReativarAluno.resources
 C:\Users\aluno\Desktop\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.ReativarModalidade.resources
+C:\Users\Usuario\Documents\git\Projeto-DAD\Estudiozinho\obj\Debug\Estudiozinho.DesmatricularAluno.resources

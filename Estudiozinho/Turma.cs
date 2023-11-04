@@ -17,17 +17,20 @@ namespace Estudiozinho
         public string Hora { get => hora; set => hora = value; }
         public int Modalidade { get => modalidade; set => modalidade = value; }
         public int Alunos { get => alunos; set => alunos = value; }
+        public int QntAlunos { get => qntAlunos; set => qntAlunos = value; }
+        public int IdTurma { get => idTurma; set => idTurma = value; }
 
         public Turma() { }
 
         public Turma(int idTurma)
         {
-            this.idTurma = idTurma;
+            this.IdTurma = idTurma;
         }
 
         public Turma(int idTurma, int qntAlunos)
         {
-            this.idTurma = idTurma;
+            this.IdTurma = idTurma;
+            this.qntAlunos = qntAlunos;
         }
 
         public Turma(int modalidade, string diaSemana)
@@ -74,7 +77,7 @@ namespace Estudiozinho
             {
                 DAO_Conexão.con.Open();
                 MySqlCommand exclui = new MySqlCommand("update Estudio_Turma set ativa = 1 where idEstudio_Turma = " +
-                    idTurma, DAO_Conexão.con);
+                    IdTurma, DAO_Conexão.con);
                 exclui.ExecuteNonQuery();
                 existe = true;
             }
@@ -136,7 +139,7 @@ namespace Estudiozinho
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idEstudio_Turma = " + idTurma, DAO_Conexão.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idEstudio_Turma = " + IdTurma, DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -153,8 +156,8 @@ namespace Estudiozinho
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Classe set nAlunosMatriculados = " + qntAlunos + "where" +
-                    " idEstudio_Turma = " + idTurma, DAO_Conexão.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Turma set nAlunosMatriculados = " + qntAlunos + " where" +
+                    " idEstudio_Turma = " + IdTurma, DAO_Conexão.con);
                 atualiza.ExecuteNonQuery();
                 att = true;
             }
@@ -187,8 +190,10 @@ namespace Estudiozinho
             {
                 Console.WriteLine(ex.ToString());
             }
-            Console.WriteLine("\n\n\n" + id + "\n\n\n");
-
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
             return id;
         }
 
@@ -198,7 +203,7 @@ namespace Estudiozinho
             try
             {
                 DAO_Conexão.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idModalidade = " + idTurma, DAO_Conexão.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Turma where idModalidade = " + IdTurma, DAO_Conexão.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

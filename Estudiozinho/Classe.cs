@@ -23,6 +23,11 @@ namespace Estudiozinho
             this.cpfAluno = cpfAluno;
         }
 
+        public Classe(string cpfAluno)
+        {
+            this.cpfAluno = cpfAluno;
+        }
+
         public Classe(int idTurma)
         {
             this.idTurma = idTurma;
@@ -51,6 +56,23 @@ namespace Estudiozinho
                 DAO_Conexão.con.Close();
             }
             return cad;
+        }
+
+        public MySqlDataReader consultaMatriculas()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Classe where cpfAluno = '" + cpfAluno + "'", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
         }
 
         public int consultaMatriculados()

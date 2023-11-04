@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Estudiozinho
 {
@@ -22,13 +23,16 @@ namespace Estudiozinho
 
         private void atualizaDataGridView()
         {
-            string maximo = "Falha";
-            string descricao = "Falha";
+            string maximo;
+            string descricao;
             List<Modalidade> listaModalidades = new List<Modalidade>();
             List<int> listaValidacao = new List<int>();
 
+            atualizaMatriculados();
+
             Aluno aluno = new Aluno();
             MySqlDataReader rAluno = aluno.consultarTodosAlunos();
+
             dgwAluno.Rows.Clear();
             while (rAluno.Read())
             {
@@ -64,28 +68,30 @@ namespace Estudiozinho
                 }
                 DAO_Conexão.con.Close();
             }
-            atualizaMatriculados();
         }
 
         private void atualizaMatriculados()
         {
-            List<Turma> listaTurma = new List<Turma>();
+            List<Classe> listaClasse = new List<Classe>();
             Turma turma = new Turma();
 
             MySqlDataReader rTurma = turma.consultaTodasTurmas();
-            while (rTurma.Read()) 
+            while (rTurma.Read())
             {
-                listaTurma.Add(turma);
+                int idTurma = int.Parse(rTurma["idEstudio_Turma"].ToString());
+                Classe classe = new Classe(idTurma);
+                listaClasse.Add(classe);
             }
             DAO_Conexão.con.Close();
 
-            foreach (Turma t in listaTurma)
+            foreach (Classe c in listaClasse)
             {
-                int idTurma = t.consultarIdTurma();
-                Classe classe = new Classe(idTurma);
-                int qntMatriculados = classe.consultaMatriculados();
-                Turma definir = new Turma(idTurma, qntMatriculados);
-                definir.defineMatriculados();
+                int qntMatriculados = c.consultaMatriculados();
+                Turma definir = new Turma(c.IdTurma, qntMatriculados);
+                if (definir.defineMatriculados())
+                {
+                    Console.WriteLine("Turma com id " + c.IdTurma + " matriculas definidas");
+                }
             }
         } 
 
@@ -115,8 +121,8 @@ namespace Estudiozinho
                 {
                     if (classe.cadastrarAluno())
                     {
-                        atualizaDataGridView();
                         MessageBox.Show("Aluno cadastrado na turma!");
+                        atualizaDataGridView();
                     }
                     else
                     {
@@ -131,10 +137,6 @@ namespace Estudiozinho
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                DAO_Conexão.con.Close();
             }
         }
 
@@ -157,26 +159,40 @@ namespace Estudiozinho
 
         private void dgwTurma_SelectionChanged(object sender, EventArgs e)
         {
-            String professor = dgwTurma.SelectedRows[0].Cells[0].Value.ToString();
-            txtProfessor.Text = professor;
-            String modalidade = dgwTurma.SelectedRows[0].Cells[1].Value.ToString();
-            txtModalidade.Text = modalidade;
-            String dia = dgwTurma.SelectedRows[0].Cells[2].Value.ToString();
-            txtDia.Text = dia;
-            String hora = dgwTurma.SelectedRows[0].Cells[3].Value.ToString();
-            mkdHora.Text = hora;
-            String matriculados = dgwTurma.SelectedRows[0].Cells[4].Value.ToString();
-            txtMatriculados.Text = matriculados;
-            String maximo = dgwTurma.SelectedRows[0].Cells[5].Value.ToString();
-            txtMaximo.Text = maximo;
+            try
+            {
+                String professor = dgwTurma.SelectedRows[0].Cells[0].Value.ToString();
+                txtProfessor.Text = professor;
+                String modalidade = dgwTurma.SelectedRows[0].Cells[1].Value.ToString();
+                txtModalidade.Text = modalidade;
+                String dia = dgwTurma.SelectedRows[0].Cells[2].Value.ToString();
+                txtDia.Text = dia;
+                String hora = dgwTurma.SelectedRows[0].Cells[3].Value.ToString();
+                mkdHora.Text = hora;
+                String matriculados = dgwTurma.SelectedRows[0].Cells[4].Value.ToString();
+                txtMatriculados.Text = matriculados;
+                String maximo = dgwTurma.SelectedRows[0].Cells[5].Value.ToString();
+                txtMaximo.Text = maximo;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void dgwAluno_SelectionChanged(object sender, EventArgs e)
         {
-            String nome = dgwAluno.SelectedRows[0].Cells[0].Value.ToString();
-            txtNomeAluno.Text = nome;
-            String cpf = dgwAluno.SelectedRows[0].Cells[1].Value.ToString();
-            mkdCpfAluno.Text = cpf;
+            try
+            {
+                String nome = dgwAluno.SelectedRows[0].Cells[0].Value.ToString();
+                txtNomeAluno.Text = nome;
+                String cpf = dgwAluno.SelectedRows[0].Cells[1].Value.ToString();
+                mkdCpfAluno.Text = cpf;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
