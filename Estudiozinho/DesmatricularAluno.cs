@@ -111,12 +111,10 @@ namespace Estudiozinho
             {
                 String professor = dgwTurma.SelectedRows[0].Cells[0].Value.ToString();
                 txtProfessor.Text = professor;
-                String dia = dgwTurma.SelectedRows[0].Cells[2].Value.ToString();
+                String dia = dgwTurma.SelectedRows[0].Cells[1].Value.ToString();
                 txtDia.Text = dia;
-                String hora = dgwTurma.SelectedRows[0].Cells[3].Value.ToString();
+                String hora = dgwTurma.SelectedRows[0].Cells[2].Value.ToString();
                 mkdHora.Text = hora;
-                String maximo = dgwTurma.SelectedRows[0].Cells[5].Value.ToString();
-                txtMaximo.Text = maximo;
             }
             catch (Exception ex)
             {

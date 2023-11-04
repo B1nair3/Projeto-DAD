@@ -32,18 +32,12 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgwTurma = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaximoAlunos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDesmatricular = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.mkdHora = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMaximo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDia = new System.Windows.Forms.TextBox();
@@ -53,6 +47,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.mkdCpfAluno = new System.Windows.Forms.MaskedTextBox();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTurma)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -95,40 +92,15 @@
             this.dgwTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Dia,
-            this.Hora,
-            this.MaximoAlunos});
-            this.dgwTurma.Location = new System.Drawing.Point(285, 12);
+            this.Hora});
+            this.dgwTurma.Location = new System.Drawing.Point(311, 12);
             this.dgwTurma.MultiSelect = false;
             this.dgwTurma.Name = "dgwTurma";
             this.dgwTurma.ReadOnly = true;
             this.dgwTurma.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwTurma.Size = new System.Drawing.Size(444, 227);
+            this.dgwTurma.Size = new System.Drawing.Size(345, 227);
             this.dgwTurma.TabIndex = 2;
             this.dgwTurma.SelectionChanged += new System.EventHandler(this.dgwTurma_SelectionChanged_1);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Professor";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Dia
-            // 
-            this.Dia.HeaderText = "Dia";
-            this.Dia.Name = "Dia";
-            this.Dia.ReadOnly = true;
-            // 
-            // Hora
-            // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            // 
-            // MaximoAlunos
-            // 
-            this.MaximoAlunos.HeaderText = "Máximo de Alunos";
-            this.MaximoAlunos.Name = "MaximoAlunos";
-            this.MaximoAlunos.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -136,12 +108,12 @@
             this.groupBox1.Controls.Add(this.btnDesmatricular);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(11, 245);
+            this.groupBox1.Location = new System.Drawing.Point(58, 245);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(718, 230);
+            this.groupBox1.Size = new System.Drawing.Size(546, 230);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Matricula";
+            this.groupBox1.Text = "Informações";
             // 
             // button2
             // 
@@ -164,34 +136,23 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.mkdHora);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txtMaximo);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtDia);
             this.groupBox3.Controls.Add(this.txtProfessor);
             this.groupBox3.Location = new System.Drawing.Point(259, 30);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(444, 134);
+            this.groupBox3.Size = new System.Drawing.Size(275, 134);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Turma";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(268, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Máximo de Alunos:";
-            // 
             // mkdHora
             // 
             this.mkdHora.Enabled = false;
-            this.mkdHora.Location = new System.Drawing.Point(205, 87);
+            this.mkdHora.Location = new System.Drawing.Point(224, 87);
             this.mkdHora.Mask = "90:00";
             this.mkdHora.Name = "mkdHora";
             this.mkdHora.Size = new System.Drawing.Size(36, 20);
@@ -201,19 +162,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(169, 90);
+            this.label6.Location = new System.Drawing.Point(188, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Hora";
-            // 
-            // txtMaximo
-            // 
-            this.txtMaximo.Enabled = false;
-            this.txtMaximo.Location = new System.Drawing.Point(370, 87);
-            this.txtMaximo.Name = "txtMaximo";
-            this.txtMaximo.Size = new System.Drawing.Size(63, 20);
-            this.txtMaximo.TabIndex = 7;
             // 
             // label5
             // 
@@ -246,7 +199,7 @@
             this.txtProfessor.Enabled = false;
             this.txtProfessor.Location = new System.Drawing.Point(86, 35);
             this.txtProfessor.Name = "txtProfessor";
-            this.txtProfessor.Size = new System.Drawing.Size(347, 20);
+            this.txtProfessor.Size = new System.Drawing.Size(174, 20);
             this.txtProfessor.TabIndex = 2;
             // 
             // groupBox2
@@ -297,16 +250,34 @@
             this.txtNomeAluno.Size = new System.Drawing.Size(159, 20);
             this.txtNomeAluno.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Professor";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Dia
+            // 
+            this.Dia.HeaderText = "Dia";
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
             // DesmatricularAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 486);
+            this.ClientSize = new System.Drawing.Size(669, 486);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgwTurma);
             this.Controls.Add(this.dgwAluno);
             this.Name = "DesmatricularAluno";
-            this.Text = "DesmatricularAluno";
+            this.Text = "Desmatricular Aluno";
             ((System.ComponentModel.ISupportInitialize)(this.dgwAluno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTurma)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -328,10 +299,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDesmatricular;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox mkdHora;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMaximo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDia;
@@ -344,6 +313,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaximoAlunos;
     }
 }
