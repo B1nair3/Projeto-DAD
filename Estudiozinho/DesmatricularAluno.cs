@@ -51,8 +51,8 @@ namespace Estudiozinho
                 MySqlDataReader rTurma = t.consultarTurma();
                 while (rTurma.Read())
                 {
-                    dgwTurma.Rows.Add(rTurma["professorTurma"].ToString(), rTurma["diaSemanaTurma"].ToString(),
-                        rTurma["horaTurma"].ToString());
+                    dgwTurma.Rows.Add(rTurma["professorTurma"].ToString(), rTurma["idEstudio_Turma"].ToString(),
+                        rTurma["diaSemanaTurma"].ToString(), rTurma["horaTurma"].ToString());
                 }
                 DAO_Conexão.con.Close();
             }
@@ -85,7 +85,21 @@ namespace Estudiozinho
 
         private void btnDesmatricular_Click(object sender, EventArgs e)
         {
+            int idTurma = int.Parse(dgwTurma.SelectedRows[0].Cells[1].Value.ToString());
+            string cpf = dgwAluno.SelectedRows[0].Cells[1].Value.ToString();
+            Classe classe = new Classe(idTurma, cpf);
 
+            if (classe.desmatriculaAluno())
+            {
+                MessageBox.Show("Aluno desmatriculado com sucesso!");
+                atualizaTurmaPorAluno(cpf);
+                atualizaMatriculados();
+                limpar();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao desmatricular aluno!");
+            }
         }
 
         private void dgwAluno_SelectionChanged(object sender, EventArgs e)
@@ -111,15 +125,24 @@ namespace Estudiozinho
             {
                 String professor = dgwTurma.SelectedRows[0].Cells[0].Value.ToString();
                 txtProfessor.Text = professor;
-                String dia = dgwTurma.SelectedRows[0].Cells[1].Value.ToString();
+                String dia = dgwTurma.SelectedRows[0].Cells[2].Value.ToString();
                 txtDia.Text = dia;
-                String hora = dgwTurma.SelectedRows[0].Cells[2].Value.ToString();
+                String hora = dgwTurma.SelectedRows[0].Cells[3].Value.ToString();
                 mkdHora.Text = hora;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public void limpar()
+        {
+            txtDia.Text = "";
+            txtNomeAluno.Text = "";
+            txtDia.Text = "";
+            mkdCpfAluno.Text = "";
+            mkdHora.Text = "";
         }
     }
 }

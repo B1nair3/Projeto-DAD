@@ -187,5 +187,17 @@ namespace Estudiozinho
             desmatricular.MdiParent = this;
             desmatricular.Show();
         }
+
+        private void consultarClasseDoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarClasse consultarClasse = new ConsultarClasse();
+            consultarClasse.MdiParent = this;
+            consultarClasse.Show();
+        }
+
+        private void sairToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

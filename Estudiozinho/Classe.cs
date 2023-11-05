@@ -75,6 +75,63 @@ namespace Estudiozinho
             return resultado;
         }
 
+
+        public MySqlDataReader consultaTodasClasses()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Classe", DAO_Conexão.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return resultado;
+        }
+
+        public bool desmatriculaAluno()
+        {
+            bool desmatriculou = false;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand desmatricula = new MySqlCommand("delete from Estudio_Classe where idTurma = " + idTurma +
+                    " and cpfAluno = '" + cpfAluno + "'", DAO_Conexão.con);
+                desmatricula.ExecuteNonQuery();
+                desmatriculou = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                DAO_Conexão.con.Close();
+            }
+
+            return desmatriculou;
+        }
+
+        public MySqlDataReader consultaTurmas()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexão.con.Open();
+                MySqlCommand busca = new MySqlCommand("select * from Estudio_Classe where idTurma = " + idTurma, DAO_Conexão.con);
+                resultado = busca.ExecuteReader();
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
+
         public int consultaMatriculados()
         {
             MySqlDataReader resultado = null;

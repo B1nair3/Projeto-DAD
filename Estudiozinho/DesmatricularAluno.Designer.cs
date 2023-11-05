@@ -48,6 +48,7 @@
             this.mkdCpfAluno = new System.Windows.Forms.MaskedTextBox();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwAluno)).BeginInit();
@@ -91,6 +92,7 @@
             this.dgwTurma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.Column1,
             this.Dia,
             this.Hora});
             this.dgwTurma.Location = new System.Drawing.Point(311, 12);
@@ -98,7 +100,7 @@
             this.dgwTurma.Name = "dgwTurma";
             this.dgwTurma.ReadOnly = true;
             this.dgwTurma.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwTurma.Size = new System.Drawing.Size(345, 227);
+            this.dgwTurma.Size = new System.Drawing.Size(443, 227);
             this.dgwTurma.TabIndex = 2;
             this.dgwTurma.SelectionChanged += new System.EventHandler(this.dgwTurma_SelectionChanged_1);
             // 
@@ -108,7 +110,7 @@
             this.groupBox1.Controls.Add(this.btnDesmatricular);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(58, 245);
+            this.groupBox1.Location = new System.Drawing.Point(109, 245);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(546, 230);
             this.groupBox1.TabIndex = 3;
@@ -256,6 +258,12 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo da Turma";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // Dia
             // 
             this.Dia.HeaderText = "Dia";
@@ -272,7 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 486);
+            this.ClientSize = new System.Drawing.Size(769, 486);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgwTurma);
             this.Controls.Add(this.dgwAluno);
@@ -311,6 +319,7 @@
         private System.Windows.Forms.MaskedTextBox mkdCpfAluno;
         private System.Windows.Forms.TextBox txtNomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
     }
